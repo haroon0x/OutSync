@@ -1,12 +1,22 @@
 # OutSync
 
+![Docker](https://img.shields.io/badge/docker-ready-blue)
+![Kafka](https://img.shields.io/badge/kafka-integrated-orange)
+![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
+
 Reliable, asynchronous event forwarding system built on the transactional outbox pattern.
 
 OutSync is a modular backend system that ensures reliable delivery of database events to message queues like Kafka using the transactional outbox pattern. It gives you a production-ready async infrastructure to build event-driven systems, webhooks, triggers, and automation platforms.
 
 Whether you're building a Zapier-like workflow engine, distributed services, or AI pipelines — OutSync is the base layer that ensures your events never get lost between your database and your queue.
 
-----------------------------
+----------
+
+## Why OutSync?
+
+Don’t reinvent the wheel. OutSync is not a framework — it’s a starter core: a copy-pasteable, extendable, battle-tested blueprint for any backend project that relies on safe, async event delivery.
+
+---
 
 KEY FEATURES
 
@@ -31,8 +41,9 @@ Containers: Docker + Docker Compose
 
 ----------------------------
 
-ARCHITECTURE
+## Architecture
 
+```text
 [ FastAPI App ]
       |
       |  ⬇
@@ -46,10 +57,11 @@ ARCHITECTURE
   - Reads unprocessed events
   - Publishes to Kafka
   - Marks as processed
+```
 
 ----------------------------
 
-USE CASES
+## USE CASES
 
 - Webhook and trigger systems (Zapier-style)
 - Async AI agents triggered by structured input
@@ -94,8 +106,8 @@ FUTURE EXTENSIONS
 
 ----------------------------
 
-PROJECT STRUCTURE
-``
+## PROJECT STRUCTURE
+```
 outsync/
 ├── app/
 │   ├── api/            --> FastAPI routes
@@ -106,13 +118,11 @@ outsync/
 ├── docker-compose.yml
 ├── requirements.txt
 └── README.md
-``
+```
+
 ----------------------------
 
 PHILOSOPHY
-
-OutSync doesn’t try to be a framework. It’s a starter core — a copy-pasteable, extendable, battle-tested blueprint for any backend project that relies on safe, async event delivery.
-
 Don’t reinvent the wheel. Fork this repo, rename it, and plug in your own business logic.
 
 ----------------------------
