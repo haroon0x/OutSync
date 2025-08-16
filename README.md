@@ -95,7 +95,7 @@ FUTURE EXTENSIONS
 ----------------------------
 
 PROJECT STRUCTURE
-
+``
 outsync/
 ├── app/
 │   ├── api/            --> FastAPI routes
@@ -106,7 +106,7 @@ outsync/
 ├── docker-compose.yml
 ├── requirements.txt
 └── README.md
-
+``
 ----------------------------
 
 PHILOSOPHY
