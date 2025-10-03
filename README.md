@@ -31,8 +31,6 @@ KEY FEATURES
 
 TECH STACK
 
-Web Framework: FastAPI (async)  
-ORM: Tortoise ORM  
 Database: PostgreSQL  
 Queue: Kafka  
 Worker: Custom asyncio loop  
