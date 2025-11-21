@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+
+	"fmt"
+	"outsync/internal/config"
+)
 
 func main() {
 	fmt.Println("Starting OutSync ...!")
+	config.LoadConfig()
+	
 }
+
