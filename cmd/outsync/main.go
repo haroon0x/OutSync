@@ -1,14 +1,16 @@
 package main
 
 import (
-
 	"fmt"
+	"outsync/internal/database"
 	"outsync/internal/config"
+	"context"
 )
 
 func main() {
 	fmt.Println("Starting OutSync ...!")
-	config.LoadConfig()
+	config = config.LoadConfig()
+	database.NewConnection(context.Background())
 	
 }
 
