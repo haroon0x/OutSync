@@ -10,6 +10,10 @@ OutSync is a modular backend system that ensures reliable delivery of database e
 
 Whether you're building a Zapier-like workflow engine, distributed services, or AI pipelines — OutSync is the base layer that ensures your events never get lost between your database and your queue.
 
+## Architecture
+
+![Architecture](https://excalidraw.com/#json=RZvob6dGhyaM7yRfVt-ut,ngUsUvVaMq4yFFfhkaVAIA)
+
 ----------
 
 ## Why OutSync?
