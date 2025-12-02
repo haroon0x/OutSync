@@ -1,21 +1,22 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"outsync/internal/database"
-	"context"
+	"outsync/internal/config"
 )
 
 func main() {
 	fmt.Println("Starting OutSync ...!")
 	ctx := context.Background()
-	
-	err := database.ApplySchema(ctx)
+	cfg := config.LoadConfig()	
+	err := database.ApplySchema(ctx , cfg)
 	if err != nil {
 		fmt.Println("Error applying schema:", err)
 		return
 	}
-	conn ,err := database.Connect(ctx)
+	conn ,err := database.Connect(ctx,cfg)
 	if err != nil {
 		fmt.Println("Error connecting to database:", err)
 		return
@@ -27,6 +28,7 @@ func main() {
 		return
 	}
 	fmt.Println("User with prompt created successfully")
+	
 
 }
 

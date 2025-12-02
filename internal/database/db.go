@@ -8,8 +8,7 @@ import (
 	"outsync/internal/config"
 )
 
-func Connect(ctx context.Context) (*pgx.Conn, error) {
-	cfg := config.LoadConfig()
+func Connect(ctx context.Context , cfg config.Config ) (*pgx.Conn, error) {
 	conn,err := pgx.Connect(ctx , cfg.DatabaseUrl )
 	if err != nil {
 		fmt.Fprintf(os.Stderr,"unable to connect to databse: %v\n" , err)
@@ -19,8 +18,8 @@ func Connect(ctx context.Context) (*pgx.Conn, error) {
 	return conn, err
 }
 
-func ApplySchema(ctx context.Context) error {
-	conn,err := Connect(ctx)
+func ApplySchema(ctx context.Context , cfg config.Config) error {
+	conn,err := Connect(ctx , cfg)
 	if err != nil {
 		return err
 	}
@@ -32,6 +31,7 @@ func ApplySchema(ctx context.Context) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println("Database updated successfully")
+	fmt.Println("Database Schema updated successfully")
+	defer conn.Close(ctx)
 	return err
 }

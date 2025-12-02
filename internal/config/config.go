@@ -3,14 +3,14 @@ package config
 import (
 	"fmt"
 	"os"
-	"github.com/joho/godotenv"
-	)
 
-type Config struct{
-	DatabaseUrl string
+	"github.com/joho/godotenv"
+)
+
+type Config struct {
+	DatabaseUrl  string
 	GeminiAPIKey string
 }
-
 
 func LoadConfig() Config {
 	godotenv.Load()

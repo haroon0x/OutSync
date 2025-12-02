@@ -12,7 +12,7 @@ Whether you're building a Zapier-like workflow engine, distributed services, or 
 
 ## Architecture
 
-![Architecture](https://excalidraw.com/#json=RZvob6dGhyaM7yRfVt-ut,ngUsUvVaMq4yFFfhkaVAIA)
+(Architecture)[https://excalidraw.com/#json=RZvob6dGhyaM7yRfVt-ut,ngUsUvVaMq4yFFfhkaVAIA]
 
 ----------
 
