@@ -43,13 +43,13 @@ flowchart TB
     end
 
     %% Event Flow Links
-    Client -->|1. Call CreateUserWithEvent()| DBTransaction
-    DBTransaction -->|2a. Save User Data| UsersTable
-    DBTransaction -->|2b. Write Event status='pending'| OutboxTable
+    Client -->|"1. Call CreateUserWithEvent()"| DBTransaction
+    DBTransaction -->|"2a. Save User Data"| UsersTable
+    DBTransaction -->|"2b. Write Event status='pending'"| OutboxTable
     
-    Worker -->|3. GetPendingEvents (LIMIT 10)| OutboxTable
-    Worker -->|4. RPush event.Payload| RedisList
-    Worker -->|5. MarkEventProcessed status='processed'| OutboxTable
+    Worker -->|"3. GetPendingEvents (LIMIT 10)"| OutboxTable
+    Worker -->|"4. RPush event.Payload"| RedisList
+    Worker -->|"5. MarkEventProcessed status='processed'"| OutboxTable
 
     %% Styling
     classDef client fill:#e0f2fe,stroke:#0284c7,stroke-width:2px;
